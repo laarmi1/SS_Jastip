@@ -204,7 +204,8 @@
         </div>
     </div>
 
-    <button onclick="history.back()" class="fixed bottom-5 right-5 text-white font-bold py-3 px-5 rounded-full shadow-lg z-50 transition duration-300 ease-in-out transform hover:scale-110" style="background-color: #10455B;">
+    <!-- PERUBAHAN BARU: Tombol Kembali mengarah ke index.html -->
+    <button onclick="window.location.href='index.html'" class="fixed bottom-5 right-5 text-white font-bold py-3 px-5 rounded-full shadow-lg z-50 transition duration-300 ease-in-out transform hover:scale-110" style="background-color: #10455B;">
         Kembali
     </button>
 
@@ -229,7 +230,7 @@
         let html5QrcodeScanner;
 
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwV14l7OIhaF_xwglcZTd2gGNWUXHGBgjvcXbHb5F2z6k4BMqxPaqeBcNGmg8SGcN2Oeg/exec'; 
-        const BINDERBYTE_API_KEY = '23d5bd432ff62fbcd8003b55e130dc536b492d8f3784a7a0651858d09e4ca0eb';
+        const BINDERBYTE_API_KEY = '71218df7d6b8798f1d838aa69207d990244342e35cb21944a5db844cd8fb0c44';
         const BINDERBYTE_API_URL = 'https://api.binderbyte.com/v1/track';
 
         let packages = [];
