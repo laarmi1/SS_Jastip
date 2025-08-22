@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pelacak Resi Paket Namlea</title>
+    <title>Pelacak Paket Namlea</title>
     <!-- Tailwind CSS CDN untuk styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Library untuk pemindai QR Code & Barcode -->
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
-  <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="icon" href="icon.png" type="image/x-icon">
     <style>
         /* Menggunakan font Inter untuk tampilan yang bersih */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Warna latar belakang yang lembut */
+            background-color: #F9F3ED; /* Warna Latar Utama */
         }
         /* Style untuk tabel agar lebih mudah dibaca */
         th, td {
@@ -22,12 +22,12 @@
             border-bottom: 1px solid #e2e8f0;
         }
         th {
-            background-color: #edf2f7;
+            background-color: #f1f5f9; /* Slate 100 */
             font-weight: 600;
-            color: #2d3748;
+            color: #475569; /* Slate 600 */
         }
         tr:hover {
-            background-color: #f7fafc;
+            background-color: #f8fafc; /* Slate 50 */
         }
         /* Custom Modal Styling */
         .modal {
@@ -44,7 +44,7 @@
             align-items: center;
         }
         .modal-content {
-            background-color: #fefefe;
+            background-color: #FFFFFF;
             margin: auto;
             padding: 24px;
             border-radius: 8px;
@@ -73,32 +73,32 @@
             border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color: 0.3s ease;
+            transition: all 0.3s ease;
         }
         .modal-button.confirm {
-            background-color: #dc2626; /* Red-600 */
+            background-color: #ef4444; /* Red-500 */
             color: white;
         }
         .modal-button.confirm:hover {
-            background-color: #b91c1c; /* Red-700 */
+            background-color: #dc2626; /* Red-600 */
         }
         .modal-button.cancel {
-            background-color: #e2e8f0; /* Gray-200 */
-            color: #4a5568; /* Gray-700 */
+            background-color: #e5e7eb; /* Gray-200 */
+            color: #374151; /* Gray-700 */
         }
         .modal-button.cancel:hover {
-            background-color: #cbd5e0; /* Gray-300 */
+            background-color: #d1d5db; /* Gray-300 */
         }
         .modal-button.ok {
-            background-color: #2563eb; /* Blue-600 */
+            background-color: #10455B; /* Warna Biru Tua */
             color: white;
         }
         .modal-button.ok:hover {
-            background-color: #1d4ed8; /* Blue-700 */
+            opacity: 0.9;
         }
         .loading-spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-left-color: #2563eb;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-left-color: #ffffff;
             border-radius: 50%;
             width: 24px;
             height: 24px;
@@ -114,15 +114,15 @@
 </head>
 <body class="p-4 sm:p-8 flex flex-col items-center min-h-screen">
     <div class="max-w-6xl w-full bg-white p-6 sm:p-8 rounded-xl shadow-lg">
-        <h1 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">Pelacak Resi Paket</h1>
+        <h1 class="text-2xl sm:text-3xl font-bold text-center mb-6" style="color: #10455B;">Paket Namlea</h1>
 
-        <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-inner">
+        <div class="mb-8 p-6 bg-slate-50 rounded-lg shadow-inner">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div>
                     <label for="resiNumbersInput" class="block text-sm font-medium text-gray-700 mb-1">Nomor Resi</label>
                     <textarea id="resiNumbersInput" rows="5" placeholder="Masukkan satu atau lebih nomor resi di sini, atau gunakan tombol 'Pindai'.&#10;Contoh:&#10;1234567890&#10;0987654321"
-                           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 shadow-sm"></textarea>
-                    <button id="scanBarcodeBtn" class="w-full mt-2 bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center transition duration-200">
+                           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500 shadow-sm" style="color: #10455B;"></textarea>
+                    <button id="scanBarcodeBtn" class="w-full mt-2 text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center transition duration-200" style="background-color: #10455B; color: #FFFFFF;">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M3 7V5a2 2 0 0 1 2-2h2"></path><path d="M17 3h2a2 2 0 0 1 2 2v2"></path><path d="M21 17v2a2 2 0 0 1-2 2h-2"></path><path d="M7 21H5a2 2 0 0 1-2-2v-2"></path><rect x="7" y="7" width="10" height="10" rx="1"></rect>
                         </svg>
@@ -132,20 +132,20 @@
                 <div>
                     <label for="expeditionSelect" class="block text-sm font-medium text-gray-700 mb-1">Ekspedisi</label>
                     <select id="expeditionSelect"
-                            class="w-full p-3 border border-purple-400 bg-purple-200 rounded-lg focus:ring-purple-600 focus:border-purple-600 shadow-sm text-purple-900 font-bold">
+                            class="w-full p-3 border rounded-lg shadow-sm font-bold" style="border-color: #FFAF20; background-color: #FFFFFF; color: #10455B;">
                         <!-- Options will be populated by JavaScript -->
                     </select>
                 </div>
             </div>
             <button id="trackPackageBtn"
-                    class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    class="w-full text-white font-bold py-3 px-6 rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105" style="background-color: #FFAF20;">
                 <span id="trackButtonText">Lacak Paket</span>
                 <span id="loadingSpinner" class="loading-spinner hidden"></span>
             </button>
         </div>
 
-        <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-inner">
-            <h2 class="text-xl font-semibold text-gray-700 mb-4">Daftar Paket Tersimpan (Lokal)</h2>
+        <div class="mb-8 p-6 bg-slate-50 rounded-lg shadow-inner">
+            <h2 class="text-xl font-semibold mb-4" style="color: #10455B;">Daftar Paket Tersimpan (Lokal)</h2>
             <div class="overflow-x-auto rounded-lg shadow-md">
                 <table class="min-w-full bg-white">
                     <thead>
@@ -164,7 +164,7 @@
             </div>
             <div class="mt-6 text-center">
                 <button id="saveToSheetBtn"
-                        class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        class="text-white font-bold py-3 px-8 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105" style="background-color: #10455B;">
                     <span id="saveButtonText">Simpan Semua ke Google Sheet</span>
                     <span id="saveLoadingSpinner" class="loading-spinner hidden"></span>
                 </button>
@@ -204,6 +204,10 @@
         </div>
     </div>
 
+    <button onclick="history.back()" class="fixed bottom-5 right-5 text-white font-bold py-3 px-5 rounded-full shadow-lg z-50 transition duration-300 ease-in-out transform hover:scale-110" style="background-color: #10455B;">
+        Kembali
+    </button>
+
     <script>
         const resiNumbersInput = document.getElementById('resiNumbersInput');
         const expeditionSelect = document.getElementById('expeditionSelect');
@@ -225,12 +229,11 @@
         let html5QrcodeScanner;
 
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwV14l7OIhaF_xwglcZTd2gGNWUXHGBgjvcXbHb5F2z6k4BMqxPaqeBcNGmg8SGcN2Oeg/exec'; 
-        const BINDERBYTE_API_KEY = '71218df7d6b8798f1d838aa69207d990244342e35cb21944a5db844cd8fb0c44';
+        const BINDERBYTE_API_KEY = '23d5bd432ff62fbcd8003b55e130dc536b492d8f3784a7a0651858d09e4ca0eb';
         const BINDERBYTE_API_URL = 'https://api.binderbyte.com/v1/track';
 
         let packages = [];
 
-        // --- PERUBAHAN BARU: Fungsi untuk memuat ekspedisi dari API ---
         async function populateExpeditionSelect() {
             const defaultOption = document.createElement('option');
             defaultOption.value = '';
