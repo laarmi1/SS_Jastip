@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Data Paket SS Jastip</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Menggunakan font Poppins untuk seluruh halaman */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Efek kilau pada tombol saat di-hover */
+        .btn-glow:hover {
+            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-600 to-blue-500 min-h-screen flex items-center justify-center p-4">
+
+    <!-- Kontainer Utama -->
+    <div class="w-full max-w-md text-center">
+        
+        <!-- Logo atau Ikon Aplikasi (Opsional) -->
+        <div class="mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto text-white opacity-90">
+                <path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v2"/>
+                <path d="M21 14v2a2 2 0 0 1-1 1.73l-7 4a2 2 0 0 1-2 0l-7-4A2 2 0 0 1 3 16v-2"/>
+                <path d="M7 22v-5l-4-2.29"/>
+                <path d="M17 22v-5l4-2.29"/>
+                <path d="M12 12l-7-4l7-4l7 4l-7 4z"/>
+            </svg>
+        </div>
+
+        <!-- Label Aplikasi -->
+        <h1 class="text-2xl md:text-3xl font-bold text-white mb-2 tracking-wide">
+            APLIKASI DATA PAKET
+        </h1>
+        <p class="text-white text-2xl font-semibold mb-12 opacity-80">SS Jastip</p>
+
+        <!-- Grup Tombol -->
+        <div class="space-y-6">
+            
+            <!-- Tombol Paket Namlea -->
+            <a href="namlea.html" class="group flex items-center justify-center w-full bg-cyan-500/30 backdrop-blur-lg text-white font-semibold text-lg py-4 px-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105 btn-glow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 transition-transform duration-300 group-hover:rotate-[-15deg]">
+                    <path d="M8.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M15.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M12 2v13.3a2.4 2.4 0 0 1-2.4 2.4c-1.3 0-2.4-1.1-2.4-2.4S8.3 13 9.6 13c.7 0 1.2.3 1.6.8"/><path d="M12 2v13.3a2.4 2.4 0 0 0 2.4 2.4c1.3 0 2.4-1.1 2.4-2.4S15.7 13 14.4 13c-.7 0-1.2.3-1.6.8"/><path d="M5 18h.01"/><path d="M19 18h.01"/><path d="M2 13h20"/>
+                </svg>
+                Paket Namlea
+            </a>
+
+            <!-- Tombol Paket MOA -->
+            <a href="moa.html" class="group flex items-center justify-center w-full bg-pink-500/30 backdrop-blur-lg text-white font-semibold text-lg py-4 px-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105 btn-glow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 transition-transform duration-300 group-hover:rotate-[15deg]">
+                   <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                </svg>
+                Paket MOA
+            </a>
+        </div>
+
+        <!-- Footer (Opsional) -->
+        <footer class="mt-16 text-white text-sm opacity-60 flex items-center justify-center space-x-1.5">
+            <p>&copy; 2025 La Armi. Dibuat Dengan</p>
+            <!-- Ikon Hati Merah Cerah -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FF3B30" stroke="#FF3B30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+        </footer>
+
+    </div>
+
+</body>
+</html>
